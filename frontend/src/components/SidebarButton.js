@@ -1,4 +1,5 @@
-import styles from "../styles/Sidebar.css"
+import styles from "../styles/sidebar.module.css"
+import { NavLink } from "react-router-dom";
 
 export default function SidebarButton({
     label,
@@ -8,12 +9,36 @@ export default function SidebarButton({
     link,
 }) {
     return (
-        <div
-            onClick={onClick}
-            style={{
-                cursor: "pointer"
-            }}>
-            <a href={link}><h3>{label}</h3></a>
-        </div>
-    )
+        <NavLink
+                link={link}
+                className={({ isActive }) =>
+                    isActive ? "sidebarButton active" : "sidebarButton"
+            }>
+            <div
+                className={styles.sidebarButton}
+                onClick={onClick}
+                style={{
+                    cursor: "pointer"
+                }}>
+                
+                    <span className="sidebarButtonIcon">{icon}</span>
+                    <span className="sidebarButtonText">{label}</span>
+            </div>
+        </NavLink>
+        // <div
+        //     className={styles.sidebarButton}
+        //     onClick={onClick}
+        //     style={{
+        //         cursor: "pointer"
+        //     }}>
+        //         <NavLink
+        //             link={link}
+        //             className={({ isActive})} =>
+        //                 isActive ? "sidebarButton active" : "sidebarButton"
+        //         }
+        //     ></div>
+        //     <h3>{label}</h3>
+        //     </NavLink>
+        // </div>
+    );
 }

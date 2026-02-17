@@ -1,17 +1,17 @@
-import styles from "../styles/sidebar.css"
+import styles from "../styles/sidebar.module.css"
 import SidebarButton from '../components/SidebarButton';
 import SidebarLogo from '../components/SidebarLogo';
 
 export default function Sidebar({
-    //
+    onClick,
 }) {
     return (
-        <div>
+        <div className={styles.sidebarContainer}>
             <SidebarLogo />
-            <SidebarButton label="Home" />
-            <SidebarButton label="Review" />
-            <SidebarButton label="Profile" />
-            <SidebarButton label="Settings" />
+            <SidebarButton label="Home" link="/Home" />
+            <SidebarButton label="Review" link="/Home" />
+            <SidebarButton label="Profile" link="/Profile" />
+            <SidebarButton label="Settings" link="/Settings"/>
         </div>
     )
 }
