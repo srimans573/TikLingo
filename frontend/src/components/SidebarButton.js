@@ -15,7 +15,7 @@ export default function SidebarButton({
         <Link to={ link }>
         <div className = {styles.sidebarButton}>
             <span className = {styles.sidebarButtonIcon}>{icon}</span>
-            <span className = {styles.sidebarButtontext}>{label}</span>
+            <span className = {styles.sidebarButtontext}><p>{label}</p></span>
         </div>
         </Link>
     );
